@@ -19,9 +19,10 @@
         </div>
 	</div>
 
-	<div class = "list-group">
-    	<a href = "#" calss = "list-group-item list-group-item-action">메이블린 뉴욕</a>
-        <a href = "#" calss = "list-group-item list-group-item-action">메이블린 뉴욕</a>
-        <a href = "#" calss = "list-group-item list-group-item-action">메이블린 뉴욕</a>
-        <a href = "#" calss = "list-group-item list-group-item-action">메이블린 뉴욕</a>
-	</div>
+	<div class="list-group">
+     	<a href="#" class="list-group-item list-group-item-action active" aria-current="true">메이블린 뉴욕</a>
+      	<a href="#" class="list-group-item list-group-item-action">메이블린 뉴욕</a>
+    	<a href="#" class="list-group-item list-group-item-action">메이블린 뉴욕</a>
+        <a href="#" class="list-group-item list-group-item-action">메이블린 뉴욕</a>
+      
+    </div>
