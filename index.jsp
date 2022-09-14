@@ -1,65 +1,21 @@
 <%@ page contentType = "text/html;charset=utf-8" %>
 <%@ page import = "java.util.Date"%>
-
 <html>
 <head>
-    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
     <!메인화면 타이틀>
     <title>Welcome</title>
 </head>
     
 <body>
-    <%-- JSP 주석처리--%>
-    <%-- nav는 메뉴를 만들 때 사용하는 __ --%>
-    <nav class = "navbar-expand navbar-dark bg-dark">
-        <div class = "container">
-            <div class = "navbar-header">
-                <a class = "navbar-brand" href = "./index.jsp">메뉴바 : 홈페이지</a>
-            </div>            
-        </div>
-    </nav>
-    <%-- class는 스타일 적용시에 사용되는 이름, 중첩 가능 - 스타일 적용시 지정된 class의 이름을 이용해 해당 class의 스타일을 적용할수 있음--%>
-    
-    <%! String greeting = "상단 페이지 : 쇼핑몰 메인화면 문자열 홍길동님";
-        String tagline = "하단 페이지 : 확인";%>
-    <div class = "jumbotron">
-        <div class = "container">
-            <h1 class = "display-3">
-                <%=greeting%>
-            </h1>
-        </div>
-    </div>
-    
-    <div class = "container">
-        <div class = "text-center">
-            <h3>
-                <%=tagline%>
-            </h3>
-    	</div>
-    <hr>
-	</div>
-    <footer class = "container">
-    	<p>
-        &copy;웹마켓 최하단 상태바
-        <%
-        Date day = new java.util.Date();
-        String am_pm;
-        int hour = day.getHours();
-        int minute = day.getMinutes();
-        int second = day.getSeconds();
-        if (hour / 12 == 0) {
-            am_pm = "AM";
-        } else {
-            am_pm = "PM";
-            hour = hour - 12;
-        }
-        String CT = hour + ":" + minute + ":" + second + " " + am_pm;
-        out.println("현재 접속  시각: " + CT + "\n");
-        %>
-
-        </p>
-    </footer>
+    <%@ include file="top_banner.jsp" %>
+	<%@ include file="top_menu.jsp" %>
+	<%@ include file="body_main.jsp" %>	
+    <%@ include file="footer.jsp" %>
 </body>	
 
 </html>
