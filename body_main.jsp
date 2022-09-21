@@ -6,35 +6,16 @@
 <%! String greeting = "welcome_mejiwoo";
     String tagline = "하단 페이지 : 확인"; %>
    
-	<div class = "jumbotron" style = "padding : 0; background-color : white">
+	<div class = "jumbotron" style = "padding : 0; background-color : white; margin-bottom : 12px">
         <hr style = "margin : 0">
         <div class = "container">
-            <h1 class = "display-4" style = "font-size : 1rem; text-align : right; margin : 0">
+            <h1 class = "display-4" style = "font-size : 1rem; text-align : right; margin-top : 9px">
                 <%=greeting%>
             </h1>
         </div>
     </div>
 
 <% ArrayList<Product> listOfProducts = productDAO.getAllProducts(); %>
-
-<div class="container">
-		<div class="row" align="center" style = "font-size : 13px"> 
-			<%
-				for (int i = 0; i < listOfProducts.size(); i++) {
-					Product product = listOfProducts.get(i);
-			%>
-			<div class="col-md-4">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getDescription()%>
-				<p><%=product.getUnitPrice()%>원
-			</div>
-			<%
-				}
-			%>
-		</div>
-</div>
-
-<hr>
     
     <div class = "card bg-dark text-white">
         <img src = "img/top_banner.jpeg" class = "card-img" alt = "top_img">
@@ -43,6 +24,23 @@
             <p class = "card-text">winter</p>
         </div>
 	</div>
+
+    <div class="container" style = "margin-top : 30px">
+            <div class="row" align="center" style = "font-size : 13px"> 
+                <%
+                    for (int i = 0; i < listOfProducts.size(); i++) {
+                        Product product = listOfProducts.get(i);
+                %>
+                <div class="col-md-4">
+                    <h3><%=product.getPname()%></h3>
+                    <p><%=product.getDescription()%>
+                    <p><%=product.getUnitPrice()%>원
+                </div>
+                <%
+                    }
+                %>
+            </div>
+    </div>
 
 	<div class="list-group">
      	<a href="#" class="list-group-item list-group-item-action active" aria-current="true">HOME</a>
