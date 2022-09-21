@@ -1,8 +1,8 @@
 <%@ page contentType = "text/html;charset=utf-8" %>
 
-<footer class = "container">
+<footer class = "container" style = "margin : 0; font-size : small">
     	<p>
-        &copy;쇼핑몰 대표 : 이름, 고유번호 : 20211029, 연락처 : 010-4055-9162, 이메일 주소 : cleame8922@sungkyul.ac.kr 
+        &copy;쇼핑몰 대표 : 정지우, 고유번호 : 20211029, 연락처 : 010-4055-9162, 이메일 주소 : cleame8922@sungkyul.ac.kr 
     	
             <br>
             

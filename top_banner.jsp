@@ -3,6 +3,5 @@
 %>
 
 <div class = "text-center">
-    <img src = "img/top_img(1).jpg" class = "img-fluid" alt = "banner_image">
-    <img src = "img/top_img(2).jpg" class = "img-fluid" alt = "banner_image">
+    <img src = "img/mejiwoologo.png" class = "img-fluid" alt = "banner_image" style = "padding : 20 0 0">
 </div>
