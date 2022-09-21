@@ -1,8 +1,10 @@
 <%@ page contentType = "text/html;charset=utf-8" %>
+<%@ page import = "java.util.ArrayList"%>
+<%@ page import = "dto.Product"%>
+<jsp:useCean id = "productDAO" class = "dao.ProductRepository" scope = "session" />
 
 <%! String greeting = "welcome_coupang";
-    String tagline = "하단 페이지 : 확인";
-%>
+    String tagline = "하단 페이지 : 확인"; %>
     <div class = "jumbotron">
         <div class = "container">
             <h1 class = "display-3">
@@ -10,6 +12,26 @@
             </h1>
         </div>
     </div>
+
+<% ArrayList<Product> listOfProducts = productDAO.getAllProducts(); %>
+
+<div class="container">
+		<div class="row" align="center">
+			<%
+				for (int i = 0; i < listOfProducts.size(); i++) {
+					Product product = listOfProducts.get(i);
+			%>
+			<div class="col-md-4">
+				<h3><%=product.getPname()%></h3>
+				<p><%=product.getDescription()%>
+				<p><%=product.getUnitPrice()%>원
+			</div>
+			<%
+				}
+			%>
+		</div>
+		<hr>
+</div>
     
     <div class = "card bg-dark text-white">
         <img src = "img/top.jpg" class = "card-img" alt = "top_img">
