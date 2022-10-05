@@ -18,7 +18,7 @@
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">ACC</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">LAST CHANCE</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">상품보기</a>
-            <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">등록</a>
+            <a class="navbar-brand" href="./product_add.jsp" style = "color : black; font-size : 12px">등록</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">수정/삭제</a>
             <a class="navbar-brand" href="../index.jsp" style = "color : black; font-size : 12px">일반모드</a>
         	
