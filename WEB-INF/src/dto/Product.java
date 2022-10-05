@@ -71,7 +71,7 @@ public class Product implements Serializable {
         this.category = category;
     }
     
-    public long getUnitInStock() {
+    public long getUnitsInStock() {
         return unitslnStock;
     }
     

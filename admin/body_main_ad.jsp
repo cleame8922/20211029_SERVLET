@@ -1,7 +1,7 @@
 <%@ page contentType = "text/html;charset=utf-8" %>
 <%@ page import = "java.util.ArrayList"%>
-<%@ page import = "dto.Product"%>
-<jsp:useBean id = "productDAO" class = "dao.ProductRepository" scope = "session"/>
+<%@ page import="dto.Product"%>
+<%@ page import = "dao.ProductRepository"%>
 
 <%! String greeting = "welcome_mejiwoo";
     String tagline = "하단 페이지 : 확인"; %>
@@ -15,10 +15,12 @@
         </div>
     </div>
 
-<% ArrayList<Product> listOfProducts = productDAO.getAllProducts(); %>
+<% 
+    ProductRepository dao = ProductRepository.getInstance();
+	ArrayList<Product> listOfProducts = dao.getAllProducts();
+%>
     
     <div class = "card bg-dark text-white">
-        <img src = "img/top_banner.jpeg" class = "card-img" alt = "top_img">
         <div class = "card-img-overlay" >
             <h5 class = "card-title">mejiwoo</h5>
             <p class = "card-text">winter</p>
@@ -36,7 +38,7 @@
                     <h3><%=product.getPname()%></h3>
                     <p><%=product.getDescription()%>
                     <p><%=product.getUnitPrice()%>원
-                    <p><a href="product_detail.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
+                    <p><a href="product_detail_ad.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
 
                 </div>
                 <%
