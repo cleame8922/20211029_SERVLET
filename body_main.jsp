@@ -18,11 +18,11 @@
 <% ArrayList<Product> listOfProducts = productDAO.getAllProducts(); %>
     
     <div class = "card bg-dark text-white">
-        <img src = "img/top_banner.jpeg" class = "card-img" alt = "top_img">
-        <div class = "card-img-overlay" >
-            <h5 class = "card-title">mejiwoo</h5>
-            <p class = "card-text">winter</p>
-        </div>
+    	<img src = "img/top_banner.jpeg" class = "card-img" alt = "top_img">
+            <div class = "card-img-overlay" >
+                <h5 class = "card-title">mejiwoo</h5>
+                <p class = "card-text">winter</p>
+            </div>
 	</div>
 
     <div class="container" style = "margin-top : 30px">
@@ -32,7 +32,7 @@
                         Product product = listOfProducts.get(i);
                 %>
                 <div class="col-md-4">
-                    <img src = "../img/product/<%=product.getProductId()%>.jpg" class="card-img" alt="...">
+                    <img src = "img/product/<%=product.getFilename()%>" class="card-img" alt="...">
                     <h3><%=product.getPname()%></h3>
                     <p><%=product.getDescription()%>
                     <p><%=product.getUnitPrice()%>원
