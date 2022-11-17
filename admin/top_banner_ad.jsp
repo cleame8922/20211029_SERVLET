@@ -3,5 +3,5 @@
 %>
 
 <div class = "text-center">
-    <img src = "img/mejiwoologo.png" class = "img-fluid" alt = "banner_image" style = "padding : 20 0 0">
+    <a href = "./index_ad.jsp"><img src="https://g-servlet-bs.run.goorm.io/img/mejiwoologo.png" class="img-fluid" alt="banner_image" style = "paddimg : 20 0 0"></a>
 </div>

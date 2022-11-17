@@ -25,28 +25,28 @@
 			break;
 		}
 	}
+    ArrayList<Product> list = (ArrayList<Product>)session.getAttribute("cartlist");
+    
+	if (list == null) { 
+        list = new ArrayList<Product>();
+        session.setAttribute("cartlist", list); // 세션 키, 값 설정
+    }
 
-    ArrayList<Product> list = (ArrayList<Product>) session.getAttribute("cartlist");
-        if (list == null) { 
-            list = new ArrayList<Product>();
-            session.setAttribute("cartlist", list); // 세션 키, 값 설정
+    int cnt = 0;
+    Product goodsQnt = new Product();
+    for (int i = 0; i < list.size(); i++) {
+        goodsQnt = list.get(i);
+        if (goodsQnt.getProductId().equals(id)) {
+            cnt++;
+            int orderQuantity = goodsQnt.getQuantity() + 1;
+            goodsQnt.setQuantity(orderQuantity);
         }
+    }
+	out.println(session.getAttribute("cartlist"));
+    if (cnt == 0) { 
+        goods.setQuantity(1);
+        list.add(goods);
+    }
 
-        int cnt = 0;
-        Product goodsQnt = new Product();
-        for (int i = 0; i < list.size(); i++) {
-            goodsQnt = list.get(i);
-            if (goodsQnt.getProductId().equals(id)) {
-                cnt++;
-                int orderQuantity = goodsQnt.getQuantity() + 1;
-                goodsQnt.setQuantity(orderQuantity);
-            }
-        }
-
-        if (cnt == 0) { 
-            goods.setQuantity(1);
-            list.add(goods);
-        }
-
-        response.sendRedirect("product_cart.jsp?id=" + id); // 장바구니 화면 페이지로 이동
-    %>
+   response.sendRedirect("product_cart.jsp?id=" + id); // 장바구니 화면 페이지로 이동
+%>

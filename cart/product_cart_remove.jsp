@@ -4,6 +4,9 @@
 <%@ page import="dao.ProductRepository"%>
 
 <%
+
+	String cartId = session.getId();
+
 	String id = request.getParameter("id");
 	if (id == null || id.trim().equals("")) {
 		response.sendRedirect("../product_detail.jsp");

@@ -5,7 +5,7 @@
     
 	<div class="container">
 		<div class="navbar-header" style = "display : inline-flex; line-height : 25px">
-            <a class="navbar-brand" href="./index.jsp"><img src = "img/npnplogo.png"></a>
+            <a class="navbar-brand" href="./index.jsp"><img src="https://g-servlet-bs.run.goorm.io/img/npnplogo.png"></a>
 			<a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 0.8rem; font-weight : bold">22 FW</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 0.8rem; font-weight : bold">INSTA PRE-ORDER 10%</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 0.8rem; font-weight : bold">MADE ME(당일출고)</a>

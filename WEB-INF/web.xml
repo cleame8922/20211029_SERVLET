@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-	<security-role>
+    <security-role>
 		<description></description >
 		<role-name>admin</role-name>
 	</security-role>
@@ -16,22 +16,13 @@
 			<role-name>admin</role-name>
 		</auth-constraint>
 	</security-constraint>
-    	<login-config>
-            <auth-method>FORM</auth-method>
-            <form-login-config>
-                <form-login-page>/login/login.jsp</form-login-page>
-                <form-error-page>/login/login_failed.jsp</form-error-page>
-            </form-login-config>
-        </login-config>
-</web-app>
-
-<web-app>
-	<security-role>
+    
+     <security-role>
 		<description></description >
 		<role-name>manage</role-name>
 	</security-role>
 	<security-constraint>
-		<display-name>WebMarket Security_02</display-name>
+		<display-name>WebMarket Security_01</display-name>
 		<web-resource-collection>
 			<web-resource-name>WebMarket</web-resource-name>
 			<description></description>
@@ -42,6 +33,7 @@
 			<role-name>manage</role-name>
 		</auth-constraint>
 	</security-constraint>
+        
     	<login-config>
             <auth-method>FORM</auth-method>
             <form-login-config>
@@ -49,4 +41,5 @@
                 <form-error-page>/login/login_failed.jsp</form-error-page>
             </form-login-config>
         </login-config>
+    
 </web-app>
