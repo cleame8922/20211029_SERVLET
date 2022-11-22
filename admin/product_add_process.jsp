@@ -4,12 +4,15 @@
 <%@ page import="com.oreilly.servlet.*"%>
 <%@ page import="com.oreilly.servlet.multipart.*"%>
 <%@ page import="java.util.Enumeration"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="../db/db_conn.jsp"%>
+
 
 <%
 	request.setCharacterEncoding("UTF-8");
 
 	String filename = "";
-	String realFolder = request.getServletContext().getRealPath("img/product");
+	String realFolder = request.getServletContext().getRealPath("../img/product");
 	String encType = "utf-8";
 	int maxSize = 5 * 1024 * 1024;
 
@@ -44,6 +47,23 @@
 	String fname = (String) files.nextElement();
 	String fileName = multi.getFilesystemName(fname);
 
+    String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, productId);
+	pstmt.setString(2, name);
+	pstmt.setInt(3, price);
+	pstmt.setString(4, description);
+	pstmt.setString(5, category);
+	pstmt.setString(6, manufacturer);
+	pstmt.setLong(7, stock);
+	pstmt.setString(8, condition);
+	pstmt.setString(9, fileName);
+	pstmt.executeUpdate();
+	
+	if (pstmt != null)
+ 		pstmt.close();
+ 	if (conn != null)
+		conn.close();
 
 	ProductRepository dao = ProductRepository.getInstance();
 
