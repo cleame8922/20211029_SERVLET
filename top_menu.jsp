@@ -4,8 +4,8 @@
 
     
 	<div class="container">
-		<div class="navbar-header" style = "display : inline-flex; line-height : 25px">
-            <a class="navbar-brand" href="./index.jsp"><img src="https://jsp-main--jfjgw.run.goorm.io//img/npnplogo.png"></a>
+		<div class="navbar-header" style = "display : inline-flex; line-height : 25px; padding : 0 0 0 0">
+            <a class="navbar-brand" href="https://mejiwoo.com/product/list.html?cate_no=117"><img src="https://jsp-main--jfjgw.run.goorm.io/img/npnplogo.png"></a>
 			<a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 0.8rem; font-weight : bold">22 FW</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 0.8rem; font-weight : bold">INSTA PRE-ORDER 10%</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 0.8rem; font-weight : bold">MADE ME(당일출고)</a>
@@ -16,6 +16,8 @@
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">SKIRT</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">DRESS</a>
             <a class="navbar-brand" href="./index.jsp" style = "color : black; font-size : 12px">상품목록(기본 홈)</a>
+            <a class="navbar-brand" href="/BoardListAction.do?pageNum=1" style = "color : black; font-size : 12px">게시판(고객센터)</a>
+            <a class="navbar-brand" href="./login/login_user.jsp" style = "color : black; font-size : 12px">로그인</a>
             <a class="navbar-brand" href="admin/index_ad.jsp" style = "color : black; font-size : 12px">관리자모드</a>
         	
             <div class="dropdown">

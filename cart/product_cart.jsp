@@ -14,6 +14,7 @@
 <%
 	String cartId = session.getId(); // 세션 정보 얻기
 %>
+    
 <title>장바구니</title>
 </head>
 <body>

@@ -7,66 +7,78 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type ="text/javascript" src ="../js/validation.js"></script>
     
-<!-- 달력 -->
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>>
+<title>회원가입</title>
     
-<!-- 우편번호 -->
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    
-<title>배송 정보</title>
 </head>
+    
 <body>
-	<jsp:include page="../top_menu.jsp" />
+	<jsp:include page="../top_menu.jsp" />	
 	<div class="jumbotron">
-	   <div class="container">
-		<h1 class="display-3">배송 정보</h1>
-	   </div>
+		<div class="container">
+			<h1 class="display-3">회원가입</h1>
+		</div>
 	</div>
+    <form name="newProduct" action="./member_join_process.jsp" class="form-horizontal" method="post" enctype = "multipart/form-data">
 	<div class="container">
-	   <form action="order_info_process.jsp" class="form-horizontal" method="post">
-	     <input type="hidden" name="cartId" value="<%=request.getParameter("cartId")%>" />
+			<div class="form-group row">
+				<label class="col-sm-2">아이디</label>
+				<div class="col-sm-3">
+					<input type="text" id = "id" name="id" class="form-control" placeholder = "아이디">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">패스워드</label>
+				<div class="col-sm-3">
+					<input type="text" id = "password" name="password" class="form-control" placeholder = "패스워드">
+				</div>
+			</div>
+            <div class="form-group row">
+                <label class="col-sm-2">패스워드 재입력</label>
+                <div class="col-sm-3">
+                    <input type="text" id ="password" name="password" class="form-control" placeholder = "패스워드 재입력">
+                </div>
+            </div>
 	     <div class="form-group row">
-	       <label class="col-sm-2">성명</label>
+	       <label class="col-sm-2">이름</label>
 	          <div class="col-sm-3">
-	      	<input name="name" type="text" class="form-control" />
+	      	<input name="name" type="text" class="form-control" placeholder = "이름">
 	          </div>
 	    </div>
-           <div class="form-group row">
-	<label class="col-sm-2">배송일</label>
-	<div class="col-sm-3">
-        <input name = "shippingDate" id = "datepicker" type = "date" class = "form-control" placeholder = "yyyy/mm/dd"/>
-        <script>
-              $(function(){
-                 $('#datepicker').datepicker({
-                     dateFormat: 'yy-mm-dd',
-                     minDate: -1 });
-              });
-		</script>
-	</div>
-	  </div>
-	 <div class="form-group row">
-	   <label class="col-sm-2">국가명</label>
-	     <div class="col-sm-3">
-             <select name = "country" class="form-control" id = "country" class="form-control">
-                 <option value = "한국">한국</option>
-                 <option value = "중국">중국</option>
-                 <option value = "일본">일본</option>
-                 <option value = "미국">미국</option>
-             </select>
-
-	    </div>
-	 </div>
-	<div class="form-group row">
-	   <label class="col-sm-2">우편번호</label>
+			<div class="form-group row">
+				<label class="col-sm-2">성별</label>
+				<div class="col-sm-3">
+                    <input type="radio" name="gender" value="m" checked>남자
+		            <input type="radio" name="gender" value="f">여자
+				</div>
+			</div>
+            <div class="form-group row">
+				<label class="col-sm-2">생일</label>
+				<div class="col-sm-3">
+					<input type="date" name="birth" class="form-control" placeholder = "생일">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">메일 주소</label>
+				<div class="col-sm-3">
+					<input type="text" name="mail" class="form-control" placeholder = "메일 주소">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">폰번호</label>
+				<div class="col-sm-3">
+					<input type="tel" id = "phone" name="phone" class="form-control" placeholder = "010-xxxx-xxxx" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">우편번호</label>
 	     <div class="col-sm-3">
             <input type="text" id="sample3_postcode" name="zipCode" placeholder="우편번호" class="form-control">
-            <input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
-            <input type="text" id="sample3_address" name = "addressName" placeholder="주소"><br>
-            <input type="text" id="sample3_detailAddress" placeholder="상세주소">
-            <input type="text" id="sample3_extraAddress" placeholder="참고항목">
+            <input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"/><br>
+            <input type="text" id="sample3_address" name = "addressName" placeholder="주소"/><br>
+            <input type="text" id="sample3_detailAddress" placeholder="상세주소"/>
+            <input type="text" id="sample3_extraAddress" placeholder="참고항목"/>
 
             <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
             <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
@@ -149,22 +161,17 @@
                             }
             </script>
                     </div>
-                </div>
-<!-- <div class="form-group row">
-	   <label class="col-sm-2">주소</label>
-	     <div class="col-sm-5">
-		<input name="addressName" type="text" class="form-control" />
-	     </div>
-	</div> -->
-	<div class="form-group row">
-	   <div class="col-sm-offset-2 col-sm-10 ">
-	     <a href="../cart/product_cart.jsp?cartId=<%=request.getParameter("cartId")%>" class="btn btn-secondary" role="button"> 이전 </a> 
-		<input type="submit" class="btn btn-primary" value="등록" />
-		<a href="order_cancelled.jsp" class= "btn btn-secondary" role="button"> 취소 </a>
-	   </div>
-	</div>
-  </form>
-  </div>
+			</div>
+			
+        <form class = "form-signin" method = "post">
+            <div class="form-group row">
+				<div class="col-sm-offset-2 col-sm-10 ">
+                    <input type="submit" class="btn btn-sm btn-success pull-right" value="가입">
+                    <a href="login_user.jsp" class="btn btn-sm btn-success pull-right">(로그인)이전 페이지</a>
+				</div>
+            </div>
+        </form>
+    </div>
+    </form>
 </body>
 </html>
-

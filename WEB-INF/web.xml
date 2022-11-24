@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app>
-    <!--
+    
     <security-role>
 		<description></description >
 		<role-name>admin</role-name>
@@ -20,7 +20,8 @@
 			<role-name>admin</role-name>
 		</auth-constraint>
 	</security-constraint>
-    -->
+    
+<!--
      <security-role>
 		<description></description >
 		<role-name>manage</role-name>
@@ -40,6 +41,8 @@
 		</auth-constraint>
 	</security-constraint>
         
+-->
+    
     	<login-config>
             <auth-method>FORM</auth-method>
             <form-login-config>
@@ -47,5 +50,15 @@
                 <form-error-page>/login/login_failed.jsp</form-error-page>
             </form-login-config>
         </login-config>
+    
+    <servlet>
+		<servlet-name>Board_controller</servlet-name>
+		<servlet-class>mvc.controller.Board_controller</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Board_controller</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
     
 </web-app>

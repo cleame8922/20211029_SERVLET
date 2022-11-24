@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img src="../image/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="...">
+                <img src="https://jsp-main--jfjgw.run.goorm.io/img/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="...">
             </div>
 	    <div class="col-md-8">
 	        <form name="newProduct" action="product_update_process.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">

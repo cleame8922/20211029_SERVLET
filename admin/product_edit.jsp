@@ -44,7 +44,7 @@
 			while (rs.next()) {
 		%>
 		<div class="col-md-4">
-            <img src="../img/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="...">
+            <img src="https://jsp-main--jfjgw.run.goorm.io/img/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="...">
 		<h3><%=rs.getString("p_name")%></h3>
 		<p><%=rs.getString("p_description")%>
 		<p><%=rs.getString("p_UnitPrice")%>원
@@ -56,7 +56,7 @@
 		<%
 		     } else if (edit.equals("delete")) {
 		%>
-		     <a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
+		     <a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button"> 삭제 &raquo;></a>
 		<%
 		     }
 		%>				
